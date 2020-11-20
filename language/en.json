@@ -1,0 +1,136 @@
+{
+    "en": {
+        "general": {
+            "dummyUser": {
+                "avatar": "https://i.imgur.com/Ul9kMrY.png",
+                "tag": "Dummy#0000"
+            },
+            "errors": {
+                "default_error": "```diff\n-ERROR-\n```\n",
+                "default_error_short": "An error occured, whilst trying to do that.",
+                "invalid_mentioned_user": "Mention a valid user.",
+                "invalid_mentioned_channel": "Mention a valid channel.",
+                "bot_no_permission": "I don't have enough permissions to do that.",
+                "user_no_permission": "You don't have permission to do that.",
+                "no_reason_provided": "Unspecified.",
+                "enter_a_valid_message": "Please enter a valid message." ,
+                "unable_to_fetch_user": "I couldn't fetch that user.",
+                "no_recently_deleted_messages": "There are no recently deleted messages.",
+                "no_recently_edited_messages": "There are no recently edited messages.",
+                "provide_a_valid_location": "Please provide a valid location",
+                "user_not_found": "User not found or isn't in this guild!",
+                "provide_a_valid_reason": "Provide a valid reason.",
+                "cant_execute_on_staff": "You can't execute that command on staff.",
+                "cant_execute_on_self": "You can't execute that command on yourself.",
+                "failed_to_fetch_avatar": "Failed to fetch avatar for this user. This is most likely due to the user having a default profile picture.",
+                "invalid_equasion": "Please enter a valid mathematical equasion.",
+                "enter_valid_text": "Please enter valid text.",
+                "enter_a_valid_emoji": "Please enter a valid emoji.",
+                "invalid_selected_emoji": "Please enter an emoji that is from this guild.",
+                "invalid_selected_role": "Please mention a valid role, from this guild.",
+                "invalid_arguments": "One or more of the command's arguments are missing or invalid. Please read the command's help.",
+                "nan": "That is not a number."
+            },
+            "success": {
+                "set_channel": "Set the channel to",
+                "enabled_plugin": "Enabled plugin.",
+                "disabled_plugin": "Disabled plugin.",
+                "set_icon": "Set the icon to:"
+            }
+        },
+        "roles": {
+            "errors": {
+                "cant_add_role": "I can't add that role to you.",
+                "already_has_role": "already has the role",
+                "doesnt_have_role": "doesn't have the role",
+                "cant_remove_role_from_you": "I can't remove that role from you.",
+                "invalid_mentioned_role": "Please mention a valid role."
+            },
+            "success": {
+                "given_role": "has been gived to",
+                "removed_role": "has been removed from"
+            }
+        },
+        "channels": {
+            "errors": {
+                "invalid_name": "Please provide a valid channel name.",
+                "select_a_valid_channel": "Please tag a valid channel.",
+                "channel_not_set": "channel is not set."
+            },
+            "success": {
+                "created_channel": "Created channel - ",
+                "deleted_channel": "Deleted channel - "
+            }
+        },
+        "prefix": {
+            "errors": {
+                "select_valid_prefix": "Please select a valid prefix.",
+                "blocked_character": "Your prefix contains an illegal prefix character.",
+                "contains_space": "Your prefix can't include a space.",
+                "too_many_characters": "Your prefix must be less or equal to 4 characters."
+            },
+            "success": {
+                "set_prefix": "Set the prefix to ",
+                "reset_prefix": "Reset the prefix to the default one."
+            }
+        },
+        "logs": {
+            "errors": {
+                "already_has_channel": "This server already has a logs channel.",
+                "doesnt_have_logs": "This server doesn't have a logs channel."
+            },
+            "success": {
+                "unset_logs_channel": "Unset Logs Channel."
+            }
+        },
+        "google": {
+            "info": {
+                "searching": "Searching Google for"
+            }
+        },
+        "nick": {
+            "success": {
+                "set_nick": "Set nickname to -"
+            }
+        },
+        "bans": {
+            "errors": {
+                "user_not_banned": "This person isn't banned!"
+            }
+        },
+        "reports": {
+            "errors": {
+                "wait_cooldown": "Please wait 2 hours, before reporting someone again.",
+                "report_channel_not_setup": "Please set up a reports channel, before using this command."
+            },
+            "success": {
+                "report_filed": "Your report has been filed to the staff team. Thank you!"
+            }
+        },
+        "giveaways": {
+            "errors": {
+                "specify_time": "Please specify a valid time. Example: `1d13h10m15s` (the ammount of time followed by the first letter of the unit)."
+            }
+        },
+        "announce": {
+            "errors": {
+                "invalid_argument_tag": "Please write if you want to tag everyone. (accepted responses: true, false)"
+            }
+        },
+        "slowmode": {
+            "errors": {
+                "invalid_time": "Please enter a valid time.",
+                "time_out_of_range": "Please select a time between 6 hours and 1 second."
+            },
+            "success": {
+                "set_slowmode": "Set the channel slowmode to"
+            }
+        },
+        "automod": {
+            "messages": {
+                "sent_link": "You are not allowed, to send links in this guild.",
+                "dm_conformation": "Links are not allowed in"
+            }
+        }
+    }
+}

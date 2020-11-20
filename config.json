@@ -1,0 +1,22 @@
+{
+    "default_prefix": "_",
+    "ownerid": "",
+    "vital_logs": "",
+    "port": "8080",
+    "YOUTUBE_API_KEY": "",
+    "SOUNDCLOUD_CLIENT_ID": "",
+    "version": "3.5",
+    "main_url": "http://localhost:80",
+    "cdn_url": "http://localhost/i",
+    "url_shortener_token": "",
+    "disabling_blacklisted_commands": [
+        "disableCommand",
+        "enableCommand"
+    ],
+    "experimental": false,
+    "both": false,
+    "support_server_invite": "",
+    "handler_loader_path": "./handlers/loader.js",
+    "constructorLoader_fileName": "constructors.js",
+    "moduleHandler_fileName": "modules.js"
+}

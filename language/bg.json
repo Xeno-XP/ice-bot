@@ -1,0 +1,130 @@
+{
+    "en": {
+        "general": {
+            "errors": {
+                "default_error": "```diff\n-ГРЕШКА-\n```\n",
+                "default_error_short": "Имаше грешка, която бе предотвратена.",
+                "invalid_mentioned_user": "Тагнете валиден човек.",
+                "invalid_mentioned_channel": "Тагнете валиден канал.",
+                "bot_no_permission": "Нямам достатъчно права, да направя това.",
+                "user_no_permission": "Ти нямаш достатъчно права, да направш това.",
+                "no_reason_provided": "Unspecified.",
+                "enter_a_valid_message": "Моля въведете валиден аргумент." ,
+                "unable_to_fetch_user": "Не успях, да прикача информацията, за този човек.",
+                "no_recently_deleted_messages": "Няма наскоро изтрито съобщение.",
+                "no_recently_edited_messages": "Няма наскоро редактирано съобщение.",
+                "provide_a_valid_location": "Моля, подайте валидна локация.",
+                "user_not_found": "Не успях да намеря този човек, или не е в този сървър!",
+                "provide_a_valid_reason": "Моля подайте валидна причина.",
+                "cant_execute_on_staff": "Не можеш, да използвате тази команда, върхо персонал.",
+                "cant_execute_on_self": "Не можеш, да използваш тази команда, върхо себе си.",
+                "failed_to_fetch_avatar": "Не успях да скача аватара на този човек. Това е често причинено, защото потребителя има аватар подразбиране.",
+                "invalid_equasion": "Моля въведете валидно математическо уравнение.",
+                "enter_valid_text": "Моля въведете валиден текст.",
+                "enter_a_valid_emoji": "Моля въведете валидно емоджи.",
+                "invalid_selected_emoji": "Моля изберете емоджи от този сървър.",
+                "invalid_selected_role": "Моля тагнете валидна роля, от този сървър.",
+                "nan": "Това не е число."
+            },
+            "success": {
+                "set_channel": "Канала беше сменен на",
+                "enabled_plugin": "Включих плугина.",
+                "disabled_plugin": "Изключих плугина.",
+                "set_icon": "Промених иконата на:"
+            }
+        },
+        "roles": {
+            "errors": {
+                "cant_add_role": "Не успях да добавя тази роля.",
+                "already_has_role": "вече има ролята",
+                "doesnt_have_role": "няма ролята",
+                "cant_remove_role_from_you": "Не успях да махна тази роля.",
+                "invalid_mentioned_role": "Моля тагни валидна роля."
+            },
+            "success": {
+                "given_role": "беше дадена на",
+                "removed_role": "беше махната от"
+            }
+        },
+        "channels": {
+            "errors": {
+                "invalid_name": "Моля напишете валидно име на канал.",
+                "select_a_valid_channel": "Моля тагнете валиден канал.",
+                "channel_not_set": "channel is not set."
+            },
+            "success": {
+                "created_channel": "Съсдаден канал - ",
+                "deleted_channel": "Изтрит канал - "
+            }
+        },
+        "prefix": {
+            "errors": {
+                "select_valid_prefix": "Моля напишете валиден prefix.",
+                "blocked_character": "Prefix-а съдържа невалиден символ.",
+                "contains_space": "Prefix-a не може да съдържа интервал.",
+                "too_many_characters": "Prefix-a трябва да бъде под или 4 символа."
+            },
+            "success": {
+                "set_prefix": "Prefix-a бе сменен на ",
+                "reset_prefix": "Prefix-a беше реставриран на този подразбиране."
+            }
+        },
+        "logs": {
+            "errors": {
+                "already_has_channel": "Този сървър вече има канал за log-ове.",
+                "doesnt_have_logs": "Този сървър няма канал за log-ове."
+            },
+            "success": {
+                "unset_logs_channel": "Каналът за log-ове бе премахнат."
+            }
+        },
+        "google": {
+            "info": {
+                "searching": "Търся в Google за"
+            }
+        },
+        "nick": {
+            "success": {
+                "set_nick": "Псевдонима се смени на -"
+            }
+        },
+        "bans": {
+            "errors": {
+                "user_not_banned": "Този човек не е ban-нат!"
+            }
+        },
+        "reports": {
+            "errors": {
+                "wait_cooldown": "Моля изчакайте 2 часа преди да репортнете някого отново.",
+                "report_channel_not_setup": "Моля конфигърирайте канал за report-и преди да report-вате."
+            },
+            "success": {
+                "report_filed": "Вашият report бе доставен до персонала. Благодарим ви!"
+            }
+        },
+        "giveaways": {
+            "errors": {
+                "specify_time": "Моля задайте валидно време. Пример: `1d13h10m15s` (времето последвано от първата латинска буква от наименованието му)."
+            }
+        },
+        "announce": {
+            "errors": {
+                "invalid_argument_tag": "Моля специфицирайте дали искате да тагнете всеки. (приети отговори: true, false)"
+            }
+        },
+        "slowmode": {
+            "errors": {
+                "invalid_time": "Моля въведете валидно време в секунди."
+            },
+            "success": {
+                "set_slowmode": "Slowmode-a на този канал бе сменен на"
+            }
+        },
+        "automod": {
+            "messages": {
+                "sent_link": "Не Ви е разрешено да пращате линкове в този сървър.",
+                "dm_conformation": "Линковете не са разрешени в"
+            }
+        }
+    }
+}
