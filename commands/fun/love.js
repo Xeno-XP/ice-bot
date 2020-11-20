@@ -18,7 +18,7 @@ module.exports = {
             person = message.guild.members.cache
                 .filter(m => !m.user.bot)
                 .random();
-        }
+        };
 
         const love = Math.random() * 100;
         const loveIndex = Math.round(love / 10);
@@ -27,8 +27,8 @@ module.exports = {
         const embed = new MessageEmbed()
             .setColor(defCol)
             .addField(`**${message.author.tag}** loves **${person.user.tag}** this much:`,
-            ` ͔  \n💟 ${Math.floor(love)}%\n\n${loveLevel}`);
+            `\n💟 ${Math.floor(love)}%\n\n${loveLevel}`);
 
         message.channel.send(embed);
     }
-}
+};

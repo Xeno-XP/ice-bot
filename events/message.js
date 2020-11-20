@@ -6,12 +6,12 @@ const {
 } = require("../config.json");
 const discord = require("discord.js");
 const {
-  angry,
-  yes,
-  money,
-  stupid,
-  loading,
-  no
+    angry,
+    yes,
+    money,
+    stupid,
+    loading,
+    no
 } = require("../emojis.json");
 const {
     defCol
@@ -19,7 +19,7 @@ const {
 const cooldowns = new discord.Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-const checkSettings = async (settings, guild, client) => {
+const checkSettings = async(settings, guild, client) => {
     let invalidSetting = false;
 
     if (JSON.stringify(settings) == "{}") {
@@ -67,7 +67,7 @@ const checkSettings = async (settings, guild, client) => {
             settings.welcomeChannel = null;
         };
     };
-    
+
     try {
         settings.premiumStatus;
     } catch (e) {
@@ -95,47 +95,59 @@ const checkSettings = async (settings, guild, client) => {
         };
     };
 
+    try {
+        settings.autoMod;
+    } catch (e) {
+        if (e) {
+            invalidSetting = true;
+            settings.autoMod = false;
+        };
+    };
+
     if (invalidSetting) {
         await db.set(`settings${guild.id}`, settings);
     };
 };
 
-module.exports = async (client, message) => {
-
-  //auto-mod
-
-  let messageArray = message.content.split(" ");
-
-        if (client.modules.is_url(message.content) === true) {
-            try {
-                message.member.hasPermission(["MANAGE_MESSAGES", "ADMINISTRATOR"]);
-            } catch (e) {
-                if (e) {
-                    return;
-                };
-            };
-
-            if (message.member.hasPermission(["MANAGE_MESSAGES", "ADMINISTRATOR"])) return;
-            let enable = db.get(`ragemod${message.guild.id}`);
-            if (enable) {
-                await message.delete();
-                await message.reply(`${lang.en.automod.messages.sent_link}${angry}`).then(async m => {
-                    setInterval(async() => {
-                        await m.delete()
-                    }, 2000)
-                });
-                await message.author.send(`**${lang.en.automod.messages.dm_conformation} ${message.guild.name}**${angry}`);
-            }
-        }
-
-    //commands
-    
+module.exports = async(client, message) => {
+    //init
     let settings = await db.get(`settings${message.guild.id}`);
-
     checkSettings(settings, message.guild, client);
-
     settings = await db.get(`settings${message.guild.id}`);
 
+    let lang, language;
+
+    if (!settings.language) {
+        language = "en";
+    } else {
+        language = settings.language;
+    };
+
+    lang = require(`${process.cwd()}/language/en.json`);
+
+    //auto-mod
+    if (client.modules.is_url(message.content) === true) {
+        try {
+            message.member.hasPermission(["MANAGE_MESSAGES", "ADMINISTRATOR"]);
+        } catch (e) {
+            if (e) {
+                return;
+            };
+        };
+
+        if (message.member.hasPermission(["MANAGE_MESSAGES", "ADMINISTRATOR"])) return;
+        if (settings.autoMod) {
+            await message.delete();
+            await message.reply(`${lang.en.automod.messages.sent_link}${angry}`).then(async m => {
+                setInterval(async() => {
+                    await m.delete()
+                }, 2000)
+            });
+            await message.author.send(`**${lang.en.automod.messages.dm_conformation} ${message.guild.name}**${angry}`);
+        }
+    }
+
+    //commands
     let prefix = settings.prefix;
 
     if (!prefix) {
@@ -193,18 +205,10 @@ module.exports = async (client, message) => {
     timestamps.set(message.author.id, now);
     setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
-    let lang, language;
-
-    if (!settings.language) {
-        language = "en";
-    } else {
-        language = settings.language;
-    };
-
-    lang = require(`${process.cwd()}/language/en.json`);
-
     if (command) {
-        if (command.category.toLowerCase() == "unlisted" && message.author.id !== ownerid) { return await message.react("762753993196699689").catch(console.error); };
+        if (command.category.toLowerCase() == "unlisted" && message.author.id !== ownerid) {
+            return await message.react("762753993196699689").catch(console.error);
+        };
 
         try {
             if (settings.disabledCommands.includes(command.name)) {
@@ -229,12 +233,14 @@ module.exports = async (client, message) => {
                 if (regusers == null) {
                     return command.run(client, message, args, require(`${process.cwd()}/language/en.json`), client.modules);
                 };
-                
-                if(!regusers.includes(message.author.id)) {
+
+                if (!regusers.includes(message.author.id)) {
                     const tosembed = new discord.MessageEmbed()
                         .setTitle(`Welcome to ${client.user.username}!`)
                         .setDescription(`By clicking ${yes} you agree to the bot's **Terms of Service** listed **__[here](${client.config.main_url}/legal#terms)__**.`)
-                        .setFooter(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+                        .setFooter(message.author.username, message.author.displayAvatarURL({
+                            dynamic: true
+                        }))
                         .setColor(0x00ffeb);
 
                     const tosmsg = await message.channel.send(tosembed);
@@ -245,28 +251,28 @@ module.exports = async (client, message) => {
                         console.error(error);
                     };
 
-                    const filter = async (reaction, user) => user.id !== message.client.user.id;
+                    const filter = async(reaction, user) => user.id !== message.client.user.id;
                     var collector = tosmsg.createReactionCollector(filter, {
                         time: 60000
                     });
 
-                    collector.on("collect", async (reaction, user) => {
+                    collector.on("collect", async(reaction, user) => {
                         reaction.users.remove(user).catch(console.error);
 
                         switch (reaction.emoji.id) {
                             case "762753908485259296":
-                                await tosmsg.reactions.removeAll().catch(1+1);
+                                await tosmsg.reactions.removeAll().catch(1 + 1);
                                 await tosmsg.edit(tosembed.setColor(0x202225).setDescription(`${yes} Accepted.`).setTitle(""));
                                 regusers = await db.get("registeredusers");
                                 regusers.push(message.author.id);
                                 db.set("registeredusers", regusers);
                                 command.run(client, message, args, lang, client.modules);
-                            break;
+                                break;
                         };
                     });
 
-                    collector.on("end", async () => {
-                        await tosmsg.reactions.removeAll().catch(1+1);
+                    collector.on("end", async() => {
+                        await tosmsg.reactions.removeAll().catch(1 + 1);
                         await tosmsg.delete();
                     });
                 } else {

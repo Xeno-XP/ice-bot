@@ -7,7 +7,7 @@ const { loading, no, stupid } = require("../../emojis.json");
 
 module.exports = {
         name: "slots",
-        aliases: [],
+        aliases: ["slot"],
         usage: `slots`,
         category: "fun",
         description: "Play a game of slots!",

@@ -45,6 +45,7 @@ module.exports =  {
             constructor() {
                 this.prefix = null;
                 this.language = null;
+                this.autoMod = false;
                 this.disabledCommands = [];
                 this.welcomeChannel = null;
                 this.premiumStatus = false;

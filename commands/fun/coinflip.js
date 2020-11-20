@@ -7,7 +7,7 @@ const { loading, no, stupid } = require("../../emojis.json");
 
 module.exports = {
         name: "coinflip",
-        aliases: ["coin"],
+        aliases: ["coin", "cf"],
         usage: `coinflip`,
         category: "fun",
         description: "Flip a coin!",
