@@ -4,7 +4,7 @@ const {
     MessageEmbed
 } = require("discord.js");
 
-const db = require(require("path").join(process.cwd(), `modules/db.js`));
+const db = require(`${require(`${process.cwd()}/config.json`).custom_db ? `${process.cwd()}/modules/db.js` : `quick.db`}`)
 
 const {
     stripIndents

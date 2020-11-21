@@ -1,16 +1,19 @@
 const Discord = require("discord.js");
 const moment = require("moment");
 const config = require(`${process.cwd()}/config.json`);
+const db = require(`${require(`${process.cwd()}/config.json`).custom_db ? `${process.cwd()}/modules/db.js` : `quick.db`}`);
 
 module.exports = async (client, guild) => {
 	let channel = client.channels.cache.get(config.bot_logs);
     
+    db.set(`settings${guild.id}`, new client.guildSettings());
+
     if (!channel) {
         return;
     };
 
     let embed = new Discord.MessageEmbed();
-        embed.setTitle("New server!");
+        embed.setTitle("Server Joined.");
         embed.addField("Owner", `${client.users.cache.get(guild.owner.id).tag ? client.users.cache.get(guild.owner.id).tag : "Failed to fetch owner."} (<@${guild.owner.id}>)`, true);
         embed.addField("Boosts", guild.premiumSubscriptionCount || '0', true);
         embed.addField("Members", `📦Total: ${guild.memberCount}\n🧑Humans: ${guild.members.cache.filter(m => !m.user.bot).size}\n🤖Bots: ${guild.members.cache.filter(m => m.user.bot === true).size}`, true);

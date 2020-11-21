@@ -1,11 +1,11 @@
 const discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const db = require(`${process.cwd()}/modules/db.js`);
-const { default_prefix } = require("../../config.json");
+const db = require(`${require(`${process.cwd()}/config.json`).custom_db ? `${process.cwd()}/modules/db.js` : `quick.db`}`);
+const config = require(`${process.cwd()}/config.json`);
 const { defCol } = require("../../colors.json");
 const { loading, no } = require("../../emojis.json");
 const AmeClient = require("amethyste-api");
-const AmeAPI = new AmeClient("cde1953fefd8363e5f69799c94db70ba57414f628fe3e73908d65aa5498252564f76810de22b3ea55ffc099d6f976a0317c032e8b611230ed180ed68d9777175");
+const AmeAPI = new AmeClient(config.amethyste_api_key);
 
 module.exports = {
         name: "trigger",

@@ -1,4 +1,4 @@
-const db = require(`${process.cwd()}/modules/db.js`);
+const db = require(`${require(`${process.cwd()}/config.json`).custom_db ? `${process.cwd()}/modules/db.js` : `quick.db`}`);
 const Discord = require("discord.js");
 const Canvas = require('canvas');
 const chalk = require("chalk");

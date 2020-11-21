@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const db = require(`${process.cwd()}/modules/db.js`);
+const db = require(`${require(`${process.cwd()}/config.json`).custom_db ? `${process.cwd()}/modules/db.js` : `quick.db`}`);
 const { stripIndents } = require("common-tags");
 const { readdirSync } = require("fs");
 const { default_prefix, ownerid } = require("../../config.json");
@@ -22,7 +22,7 @@ module.exports = {
   }
 
   let warns = db.get(`warns${message.guild.id}${user.id}`);
-    let lastThreeWarns = "";
+  
     let hasWarns;
    
     if (!warns) {

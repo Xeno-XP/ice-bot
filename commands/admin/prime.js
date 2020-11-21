@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const { arg } = require("mathjs");
-const db = require(`${process.cwd()}/modules/db.js`);
+const db = require(`${require(`${process.cwd()}/config.json`).custom_db ? `${process.cwd()}/modules/db.js` : `quick.db`}`);
 const { default_prefix, ownerid } = require("../../config.json");
 const fs = require("fs");
 const { angry, yes, money, stupid, loading, no } = require("../../emojis.json");
