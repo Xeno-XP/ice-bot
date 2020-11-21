@@ -27,7 +27,7 @@ module.exports= {
     let uEmbed = new discord.MessageEmbed()
       .setColor(defCol)
       .setAuthor(`${user.username}${isS} Avatar`)
-      .setImage(user.displayAvatarURL({ dynamic: true }));
+      .setImage(user.displayAvatarURL({ dynamic: true, size: 2048 }));
     message.channel.send(uEmbed);
   }
 }

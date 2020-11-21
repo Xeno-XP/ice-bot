@@ -64,10 +64,9 @@ async function getBasicHelp(client, message) {
 
     const embed = new discord.MessageEmbed()
     .setColor(defCol)
-    .setThumbnail(client.user.displayAvatarURL())
     .setTimestamp()
     .setAuthor(`${client.user.username} help`, client.user.displayAvatarURL())
-    .setFooter(client.user.username, client.user.displayAvatarURL())
+    .setFooter(`For ${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }));
 
     let cmd = "";
 
@@ -156,5 +155,5 @@ async function getSpecificHelp(client, message, input) {
         };
     };
 
-    return message.channel.send(embed.setColor(defCol).setDescription(info).setFooter(`For ${message.author.username}`, message.author.displayAvatarURL()).setAuthor(`${client.user.username} help`, client.user.displayAvatarURL()).setTimestamp());
+    return message.channel.send(embed.setColor(defCol).setDescription(info).setFooter(`For ${message.author.username}`, message.author.displayAvatarURL({ dynamic: true })).setAuthor(`${client.user.username} help`, client.user.displayAvatarURL()).setTimestamp());
 }
