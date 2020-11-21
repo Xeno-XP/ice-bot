@@ -28,15 +28,17 @@ testingToken=token_for_the_testing_bot(optional)
     "bot_logs": "",
     "port": "8080",
     "YOUTUBE_API_KEY": "",
+    "amethyste_api_key": "",
     "SOUNDCLOUD_CLIENT_ID": "",
     "version": "3.5",
-    "main_url": "http://localhost:80",
+    "main_url": "http://localhost",
     "cdn_url": "http://localhost/i",
     "url_shortener_token": "",
     "disabling_blacklisted_commands": [
         "disableCommand",
         "enableCommand"
     ],
+    "custom_db": true,
     "experimental": false,
     "both": false,
     "support_server_invite": "",
