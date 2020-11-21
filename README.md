@@ -25,6 +25,7 @@ testingToken=token_for_the_testing_bot(optional)
     "default_prefix": "_",
     "ownerid": "",
     "vital_logs": "",
+    "bot_logs": "",
     "port": "8080",
     "YOUTUBE_API_KEY": "",
     "SOUNDCLOUD_CLIENT_ID": "",
