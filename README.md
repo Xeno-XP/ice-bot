@@ -1,3 +1,5 @@
+# ⚠ ICE BOT IS A DEPRECATED PROJECT AND WILL NOT BE UPDATED ANY MORE. ⚠
+
 # Ice Bot
 
 Ice Bot is a powerful administration bot and it's a member's and moderator's best friend. The commands are ranging from fun ones, like the meme and love command and for the moderators, there are commands such as ban, kick, mute, warn and much more! Plus there is a super simple and interactive webdashboard for convenience at [https://icebot.xyz](https://icebot.xyz). You can get all of that for free!
